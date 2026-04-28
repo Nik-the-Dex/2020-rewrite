@@ -36,11 +36,11 @@ public class ColorWheel extends SubsystemBase
     private static final ColorSensorV3 colorSensor = new ColorSensorV3(i2cPort);
 
     private final ColorMatch m_colorMatcher  = new ColorMatch();
-    private final Color kBlueTarget   = ColorMatch.makeColor(0.127, 0.424, 0.444);
-    private final Color kGreenTarget  = ColorMatch.makeColor(0.166, 0.577, 0.257);
-    private final Color kRedTarget    = ColorMatch.makeColor(0.520, 0.346, 0.133);
-    private final Color kYellowTarget = ColorMatch.makeColor(0.310, 0.564, 0.125);
-    private final Color kNothing      = ColorMatch.makeColor(0.291, 0.468, 0.239);
+    private final Color kBlueTarget   = new Color(0.127, 0.424, 0.444);
+    private final Color kGreenTarget  = new Color(0.166, 0.577, 0.257);
+    private final Color kRedTarget    = new Color(0.520, 0.346, 0.133);
+    private final Color kYellowTarget = new Color(0.310, 0.564, 0.125);
+    private final Color kNothing      = new Color(0.291, 0.468, 0.239);
 
     public ColorWheel()
     {

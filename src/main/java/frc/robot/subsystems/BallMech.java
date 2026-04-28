@@ -37,8 +37,9 @@ public class BallMech extends SubsystemBase
     private final Ultrasonic ballSensorIntake  = new Ultrasonic(4, 3);
     private final Ultrasonic ballSensorShooter = new Ultrasonic(2, 3);
 
-    private final VelocityVoltage velocityRequest  = new VelocityVoltage(0);
-    private final DutyCycleOut    dutyCycleRequest  = new DutyCycleOut(0);
+    private final VelocityVoltage velocityRequest      = new VelocityVoltage(0);
+    private final DutyCycleOut    dutyCycleRequest      = new DutyCycleOut(0);
+   final Follower shooterFollowerRequest = new Follower(shooterMotor1.getDeviceID(), null);
 
     public int     counter      = 0;
     public int     shooterState = 0;
@@ -47,6 +48,7 @@ public class BallMech extends SubsystemBase
 
     private int ballCountState = 0;
 
+    @SuppressWarnings("removal")
     public BallMech()
     {
         TalonFXConfiguration shooterConfig = new TalonFXConfiguration();
@@ -56,7 +58,7 @@ public class BallMech extends SubsystemBase
         shooterConfig.Slot0.kD = frc.robot.Constants.kD;
         shooterMotor1.getConfigurator().apply(shooterConfig);
 
-        shooterMotor2.setControl(new Follower(shooterMotor1.getDeviceID(), true));
+        shooterMotor2.setControl(shooterFollowerRequest);
 
         Ultrasonic.setAutomaticMode(true);
 
