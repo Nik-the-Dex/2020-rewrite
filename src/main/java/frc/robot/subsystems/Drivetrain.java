@@ -6,6 +6,8 @@ import com.ctre.phoenix6.controls.Follower;
 import com.ctre.phoenix6.controls.VelocityVoltage;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.InvertedValue;
+import com.ctre.phoenix6.signals.MotorAlignmentValue;
+
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
@@ -52,8 +54,8 @@ public class Drivetrain extends SubsystemBase
         right1Config.MotorOutput.Inverted = InvertedValue.Clockwise_Positive;
         rightTalon1.getConfigurator().apply(right1Config);
 
-        rightTalon2.setControl(new Follower(rightTalon1.getDeviceID(), false));
-        leftTalon3.setControl(new Follower(leftTalon1.getDeviceID(), false));
+        rightTalon2.setControl(new Follower(rightTalon1.getDeviceID(), MotorAlignmentValue.Aligned));
+        leftTalon3.setControl(new Follower(leftTalon1.getDeviceID(), MotorAlignmentValue.Aligned));
     }
 
     public void sigmaDrive(double leftSpeed, double rightSpeed)
