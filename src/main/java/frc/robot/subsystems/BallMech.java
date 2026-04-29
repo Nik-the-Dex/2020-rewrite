@@ -35,7 +35,7 @@ public class BallMech extends SubsystemBase
     );
 
     private final Ultrasonic ballSensorIntake  = new Ultrasonic(4, 3);
-    private final Ultrasonic ballSensorShooter = new Ultrasonic(2, 3);
+   // private final Ultrasonic ballSensorShooter = new Ultrasonic(2, 3);
 
     private final VelocityVoltage velocityRequest      = new VelocityVoltage(0);
     private final DutyCycleOut    dutyCycleRequest      = new DutyCycleOut(0);
@@ -177,7 +177,7 @@ public class BallMech extends SubsystemBase
         }
     }
 
-    public void ballIndexing()
+  /*   public void ballIndexing()
     {
         if (getBallCount() >= 3 && ballSensorShooter.getRangeInches() > 30)
         {
@@ -187,7 +187,7 @@ public class BallMech extends SubsystemBase
         {
             runRoller(0);
         }
-    }
+    } */
 
     private int getBallCount()
     {
@@ -220,6 +220,6 @@ public class BallMech extends SubsystemBase
     {
         SmartDashboard.putNumber("shooterVelocity",      shooterMotor1.getVelocity().getValueAsDouble());
         SmartDashboard.putNumber("ballSensorIntake_in",  ballSensorIntake.getRangeInches());
-        SmartDashboard.putNumber("ballSensorShooter_in", ballSensorShooter.getRangeInches());
+      //  SmartDashboard.putNumber("ballSensorShooter_in", ballSensorShooter.getRangeInches());
     }
 }

@@ -27,8 +27,8 @@ public final class Constants
     public static final double kI = 0.0;
     public static final double kD = 0.0;
 
-    public static final int PCM1 = 0;
-    public static final int PCM2 = 1;
+    public static final int PCM1 = 20;
+    public static final int PCM2 = 21;
 
     public static final int DRIVETRAIN_SHIFTER_FWD = 6;
     public static final int DRIVETRAIN_SHIFTER_REV = 1;
